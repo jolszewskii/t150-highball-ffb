@@ -15,7 +15,14 @@ FFB, pedals and buttons worked. Tested at **70% gain / Skip FFB steps 0** withou
 
    Replace `actry` with your bottle name. The script builds [crossover-wheel](https://github.com/renaudallard/crossover-wheel) at tested revision **`50ce00e`**, backs up the original DLL and installs `dinput8.dll` (proxy) plus `dinput8_orig.dll` (Wine original). It stops if `dinput8_orig.dll` already exists. No registry changes.
 3. In **Highball → bottle → Advanced → DLL overrides**, add **`dinput8=n,b`** without deleting other entries. Tested: `version=n,b;winmm=n,b;dinput8=n,b`.
-4. Set T150 to **PS3**, connect it, and run `Start-T150-Highball.command`. Wait for `wheel 044f:b677 open` and `backend macOS HID, threaded`. Keep Terminal open; start Assetto Corsa through Content Manager.
+4. Set T150 to **PS3** and connect it. Make the launcher executable and run it:
+
+   ```sh
+   chmod +x Start-T150-Highball.command
+   ./Start-T150-Highball.command
+   ```
+   Wait for `wheel 044f:b677 open` and `backend macOS HID, threaded`. Keep Terminal open; start Assetto Corsa through Content Manager.
+
 
 **Already working? Skip installation.** The launcher also detects `~/Desktop/T150-FFB/crossover-wheel`.
 
